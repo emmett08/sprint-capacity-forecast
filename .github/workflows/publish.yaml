@@ -53,25 +53,6 @@ jobs:
           name: dist
           path: dist/*
 
-  publish-testpypi:
-    name: Publish to TestPyPI (main)
-    needs: lint-test-build
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist
-      - name: Publish
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          repository-url: https://test.pypi.org/legacy/
-          skip-existing: true
-
   publish-pypi:
     name: Publish to PyPI (tags)
     needs: lint-test-build
