@@ -9,7 +9,7 @@ description = "Calibrated three-point (PERT) distributions with empirical-Bayes 
 readme = "README.md"
 requires-python = ">=3.9"
 license = { file = "LICENSE" }
-authors = [{ name = "Emmett Miller (Sky U.K.)", email = "example@example.com" }]
+authors = [{ name = "Emmett Miller", email = "emmett.miller7@outlook.com" }]
 keywords = ["PERT", "forecasting", "agile", "bias", "empirical-bayes", "calibration"]
 
 [project.optional-dependencies]
