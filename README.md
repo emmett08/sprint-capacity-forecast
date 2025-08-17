@@ -1,1 +1,14 @@
-forecast 0.3.1 — refined layout, IEEE-aligned naming, aliases for 0.1.
+# forecast-pert
+
+**Calibrated three-point (PERT) distributions with empirical-Bayes bias correction**  
+Model sprint capacity in small agile teams with explicit uncertainty rather than fixed focus factors.
+
+---
+
+## Installation
+
+From PyPI:
+
+```bash
+pip install forecast-pert
+```
