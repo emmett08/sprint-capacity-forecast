@@ -34,6 +34,9 @@ disable = [
   "C0116",  # missing-function-docstring
   "R0903",  # too-few-public-methods
   "C0325",  # superfluous-parens
+  "R0914",  # too-many-locals
+  "W0511",  # fixme / TODO
+  "C0103",  # invalid-name
 ]
 
 [tool.ruff]
