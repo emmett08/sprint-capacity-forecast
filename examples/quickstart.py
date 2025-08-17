@@ -1,15 +1,14 @@
 from __future__ import annotations
 
 import math
-import random
 from typing import Iterable
 
 from forecast import (
     BiasObservation,
-    ThreePointEstimate,
-    default_calibrator,
     CommitCapacityEngine,
     DailyInputs,
+    ThreePointEstimate,
+    default_calibrator,
 )
 
 obs = [

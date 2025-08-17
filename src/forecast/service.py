@@ -6,6 +6,7 @@ from forecast.correction import LogMultiplicativeTriadCalibrator, TriadCalibrato
 from forecast.inflation import QuantileUpperTailInflation, UpperTailInflationCalibrator
 from forecast.pert import BetaPertFactory, PertDistribution, PertFactory
 
+
 class PertCalibrator:
     """Facade for fitting bias, calibrating upper-tail inflation, and producing PERT distributions."""
     def __init__(

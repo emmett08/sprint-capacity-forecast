@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
 import math
+from abc import ABC, abstractmethod
 from typing import List, Sequence
 
 from forecast.bias import BiasPosterior

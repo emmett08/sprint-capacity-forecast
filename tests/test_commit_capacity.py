@@ -2,25 +2,30 @@ from __future__ import annotations
 
 import math
 import random
-from typing import Mapping, Optional, List
+from typing import List, Mapping, Optional
+
 import pytest
 
+from forecast import default_calibrator
+from forecast.bias import BiasPosterior
 from forecast.bias.bias import BiasCalibrator
 from forecast.commit import CommitCapacityEngine, DailyInputs, DailyMoments
 from forecast.core.types import EngineerId, Number, ThreePointEstimate
-from forecast.bias import BiasPosterior
 from forecast.correction.correction import TriadCalibrator
 from forecast.inflation.inflation import UpperTailInflationCalibrator
 from forecast.pert import PertDistribution
 from forecast.pert.pert import PertFactory
 from forecast.service import PertCalibrator
-from forecast import default_calibrator
+
 
 class _StubDist(PertDistribution):
     def __init__(self, mean: float, var: float) -> None:
-        self._m = float(mean); self._v = float(var)
-    def mean(self) -> float: return self._m
-    def variance(self) -> float: return self._v
+        self._m = float(mean)
+        self._v = float(var)
+    def mean(self) -> float:
+        return self._m
+    def variance(self) -> float:
+        return self._v
     def sample(self, n: int = 1, rng: Optional[random.Random] = None) -> List[Number]:
         return [self._m] * n
 
@@ -50,7 +55,8 @@ class _StubCal:
         delta_b: Number,
     ) -> PertDistribution:
         triad.validate()
-        _ = float(delta_b); _ = bias.alpha_for(engineer_id)
+        _ = float(delta_b) 
+        _ = bias.alpha_for(engineer_id)
         return _StubDist(self._m[engineer_id], self._v[engineer_id])
 
 class _DummyBiasCal(BiasCalibrator):

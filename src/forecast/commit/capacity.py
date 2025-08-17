@@ -5,10 +5,10 @@ from math import isfinite, sqrt
 from statistics import NormalDist
 from typing import Dict, Mapping, Optional, Sequence, Tuple
 
+from forecast.bias import BiasPosterior
 from forecast.core.types import EngineerId, Number, ThreePointEstimate
 from forecast.pert import PertDistribution
 from forecast.service import PertCalibrator
-from forecast.bias import BiasPosterior
 
 
 @dataclass(frozen=True)

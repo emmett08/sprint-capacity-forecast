@@ -1,7 +1,10 @@
 from __future__ import annotations
+
 import math
 from abc import ABC, abstractmethod
+
 from forecast.core.types import Number, ThreePointEstimate
+
 
 class TriadCalibrator(ABC):
     """Applies bias and upper-tail inflation to a three-point triad."""
